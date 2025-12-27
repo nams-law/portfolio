@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Set default to Nepali as requested
-  const [locale, setLocale] = useState<Locale>('ne');
+  const [locale, setLocale] = useState<Locale>('en');
 
   const toggleLocale = () => {
     setLocale((prev) => (prev === 'ne' ? 'en' : 'ne'));
