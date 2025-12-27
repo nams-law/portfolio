@@ -11,7 +11,7 @@ import {
 import { Service, NavItem, ExperienceItem, EducationItem, LocalizedString } from './types';
 
 export const UI_TEXT: Record<string, LocalizedString> = {
-  name: { en: 'Namrata Khadka', ne: 'नाम्रता खड्का' },
+  name: { en: 'Namrata Khadka', ne: 'नम्रता खड्का' },
   consultation: { en: 'Consult Now', ne: 'परामर्श लिनुहोस्' },
   practiceTitle: { en: 'Practice Areas', ne: 'कार्यक्षेत्र' },
   practiceSub: { en: 'Focused expertise designed to help you navigate the nuances of the law in Nepal.', ne: 'नेपालको कानुनी जटिलताहरू सुल्झाउन र तपाईंको लक्ष्य प्राप्त गर्न मद्दत गर्ने विशेषज्ञता।' },
