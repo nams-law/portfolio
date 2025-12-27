@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS, UI_TEXT } from '../constants';
 import { useLanguage } from '../LanguageContext';
 
@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
                   isActive ? 'text-stone-900' : 'text-stone-500 hover:text-stone-800'
                 }`}
               >
-                {t(item.label)}
+                <span className={locale === 'ne' ? 'lang-ne' : ''}>{t(item.label)}</span>
                 <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-stone-900 transition-transform duration-300 origin-left ${
                   isActive ? 'scale-x-100' : 'scale-x-0'
                 }`} />
@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           <div className="hidden sm:flex bg-stone-100 p-1 rounded-full border border-stone-200 shadow-inner">
             <button 
               onClick={() => setLocale('ne')}
-              className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider transition-all duration-300 ${
+              className={`px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-300 lang-ne ${
                 locale === 'ne' ? 'bg-white text-stone-900 shadow-md transform scale-105' : 'text-stone-400 hover:text-stone-600'
               }`}
             >
@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             </button>
             <button 
               onClick={() => setLocale('en')}
-              className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider transition-all duration-300 ${
+              className={`px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider transition-all duration-300 uppercase ${
                 locale === 'en' ? 'bg-white text-stone-900 shadow-md transform scale-105' : 'text-stone-400 hover:text-stone-600'
               }`}
             >
@@ -107,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             onClick={(e) => handleNavClick(e, '#contact')}
             className="hidden lg:block bg-stone-900 text-white px-6 py-2.5 text-sm font-medium hover:bg-stone-800 transition-all hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
           >
-            {t(UI_TEXT.consultation)}
+            <span className={locale === 'ne' ? 'lang-ne' : ''}>{t(UI_TEXT.consultation)}</span>
           </a>
 
           <button 
@@ -132,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               onClick={(e) => handleNavClick(e, item.href)}
               className={`serif text-3xl font-bold transition-colors ${
                 activeSection === item.href.slice(1) ? 'text-stone-900' : 'text-stone-400'
-              }`}
+              } ${locale === 'ne' ? 'lang-ne' : ''}`}
             >
               {t(item.label)}
             </a>
@@ -141,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           <div className="flex bg-stone-100 p-1 rounded-full border border-stone-200 mt-6">
             <button 
               onClick={() => setLocale('ne')}
-              className={`px-8 py-3 rounded-full text-xs font-bold transition-all ${
+              className={`px-8 py-3 rounded-full text-xs font-bold transition-all lang-ne ${
                 locale === 'ne' ? 'bg-white text-stone-900 shadow-md' : 'text-stone-400'
               }`}
             >
@@ -149,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             </button>
             <button 
               onClick={() => setLocale('en')}
-              className={`px-8 py-3 rounded-full text-xs font-bold transition-all ${
+              className={`px-8 py-3 rounded-full text-xs font-bold transition-all uppercase tracking-wider ${
                 locale === 'en' ? 'bg-white text-stone-900 shadow-md' : 'text-stone-400'
               }`}
             >
@@ -162,7 +162,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             onClick={(e) => handleNavClick(e, '#contact')}
             className="w-full max-w-xs text-center bg-stone-900 text-white py-5 font-medium text-lg mt-6 shadow-xl active:scale-95 transition-transform"
           >
-            {t(UI_TEXT.consultation)}
+            <span className={locale === 'ne' ? 'lang-ne' : ''}>{t(UI_TEXT.consultation)}</span>
           </a>
         </nav>
       </div>
